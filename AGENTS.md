@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Instructions for coding agents working on the Omarchy RSS-Reeder plugin (`io.github.sanjyay.rss-reeder`).
+Instructions for coding agents working on the Omarchy RSS-Reeder plugin (`io.github.sanjyyayy.rss-reeder`).
 
 ## Architecture
 

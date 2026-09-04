@@ -16,7 +16,7 @@ If you just installed RSS-Reeder and the bar icon is not visible:
    ```bash
    omarchy plugin list
    ```
-   Ensure `io.github.sanjyay.rss-reeder` is listed as enabled.
+   Ensure `io.github.sanjyyayy.rss-reeder` is listed as enabled.
 3. **Check Bar layout**:
    By default, RSS-Reeder is added to the `right` section of the bar. If you have custom bar configurations in `~/.config/omarchy/shell.json`, verify the module is enabled.
 

@@ -7,12 +7,12 @@ import "Model.js" as Model
 
 BarWidget {
   id: root
-  moduleName: "io.github.sanjyay.rss-reeder"
+  moduleName: "io.github.sanjyyayy.rss-reeder"
 
   readonly property var legacySettings: {
     var fromLayout = Model.entryFromLayout(root.bar && root.bar.layoutConfig, [
-      "io.github.sanjyay.rss-reeder",
-      "io.github.sanjyay.rssreeder",
+      "io.github.sanjyyayy.rss-reeder",
+      "io.github.sanjyyayy.rssreeder",
       "io.github.rafaelvzago.rss"
     ])
     return fromLayout || ({})
