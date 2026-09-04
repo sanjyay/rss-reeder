@@ -62,7 +62,7 @@ A native RSS and Atom reader for the Omarchy bar, with OPML import/export, categ
 RSS-Reeder is a third-party Omarchy plugin. You can install and enable it directly using the Omarchy CLI:
 
 ```bash
-omarchy plugin add https://github.com/sanjyyayy/rss-reeder.git --enable
+omarchy plugin add https://github.com/sanjyay/rss-reeder.git --enable
 ```
 
 After installation, reload the desktop shell if needed:
@@ -78,7 +78,7 @@ The RSS-Reeder icon (`󰑫`) will appear in the right section of your Omarchy ba
 To update to the latest release:
 
 ```bash
-omarchy plugin update io.github.sanjyyayy.rss-reeder
+omarchy plugin update io.github.sanjyay.rss-reeder
 omarchy-restart-shell
 ```
 
@@ -151,7 +151,7 @@ Click `󰒓` in the reader header to access Settings:
 To disable and remove the RSS-Reeder plugin:
 
 ```bash
-omarchy plugin remove io.github.sanjyyayy.rss-reeder
+omarchy plugin remove io.github.sanjyay.rss-reeder
 omarchy-restart-shell
 ```
 

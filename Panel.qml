@@ -7,8 +7,8 @@ import "Model.js" as Model
 
 Panel {
   id: root
-  moduleName: "io.github.sanjyyayy.rss-reeder"
-  ipcTarget: "io.github.sanjyyayy.rss-reeder"
+  moduleName: "io.github.sanjyay.rss-reeder"
+  ipcTarget: "io.github.sanjyay.rss-reeder"
   manageIpc: false
 
   property var anchorItem: null

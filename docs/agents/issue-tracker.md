@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Issues and specs for this repo live as GitHub issues on `sanjyyayy/rss-reeder`. Use the `gh` CLI.
+Issues and specs for this repo live as GitHub issues on `sanjyay/rss-reeder`. Use the `gh` CLI.
 
 **PRs as a request surface: no.**
 
