@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls as Controls
 import qs.Commons
 import qs.Ui
 import "Model.js" as Model
@@ -20,6 +21,11 @@ Item {
   property bool isCustomCategoryMode: false
   property bool categoryDropdownOpen: false
   property string customCategoryText: ""
+
+  onCategoryDropdownOpenChanged: {
+    if (root.categoryDropdownOpen) categoryMenu.open()
+    else categoryMenu.close()
+  }
 
   property string statusMessage: ""
   property bool statusIsError: false
@@ -290,6 +296,7 @@ Item {
 
           TextInput {
             id: urlInput
+            clip: true
             anchors.fill: parent
             anchors.margins: Style.space(4)
             text: root.draftUrl
@@ -332,6 +339,7 @@ Item {
 
             TextInput {
               id: titleInput
+              clip: true
               anchors.fill: parent
               anchors.margins: Style.space(4)
               text: root.draftTitle
@@ -379,6 +387,7 @@ Item {
 
                 TextInput {
                   id: customCatInput
+                  clip: true
                   width: parent.width - Style.space(20)
                   anchors.verticalCenter: parent.verticalCenter
                   text: root.customCategoryText
@@ -477,25 +486,31 @@ Item {
             }
 
             // Dropdown Menu Popout
-            Rectangle {
-              visible: root.categoryDropdownOpen && !root.isCustomCategoryMode
-              anchors.top: parent.bottom
-              anchors.topMargin: Style.space(4)
-              anchors.left: parent.left
+            Controls.Popup {
+              id: categoryMenu
+              y: parent.height + Style.space(4)
               width: parent.width
               height: Math.min(Style.space(200), (catMenuColumn.implicitHeight + Style.space(8)))
-              radius: Style.space(4)
-              color: Color.background
-              border.color: Qt.rgba(root.contentForeground.r, root.contentForeground.g, root.contentForeground.b, 0.2)
-              border.width: 1
-              z: 100
-              clip: true
+              padding: Style.space(4)
+              focus: true
+              closePolicy: Controls.Popup.CloseOnEscape | Controls.Popup.CloseOnPressOutsideParent
+              onClosed: root.categoryDropdownOpen = false
 
-              Flickable {
-                anchors.fill: parent
-                anchors.margins: Style.space(4)
+              // Popup places the menu above the form and search field and
+              // owns pointer handling outside the selector's bounds.
+              background: Rectangle {
+                radius: Style.space(4)
+                color: Color.background
+                border.color: Qt.rgba(root.contentForeground.r, root.contentForeground.g, root.contentForeground.b, 0.2)
+                border.width: 1
+              }
+
+              contentItem: Flickable {
+                contentWidth: width
                 contentHeight: catMenuColumn.implicitHeight
+                flickableDirection: Flickable.VerticalFlick
                 boundsBehavior: Flickable.StopAtBounds
+                clip: true
 
                 Column {
                   id: catMenuColumn
@@ -604,6 +619,7 @@ Item {
                         root.isCustomCategoryMode = true
                         root.categoryDropdownOpen = false
                         root.customCategoryText = ""
+                        customCatInput.forceActiveFocus()
                       }
                     }
                   }
